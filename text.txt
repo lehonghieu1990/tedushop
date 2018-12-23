@@ -1,1 +1,7 @@
-aaaaa
+<<<<<<< HEAD
+bbbbbb
+gygygygy
+=======
+sua bbbbb
+>>>>>>> master
+them bbbbbbb
