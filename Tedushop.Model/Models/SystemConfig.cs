@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Tedushop.Model.Models
 {
     [Table("SystemConfigs")]
-    class SystemConfig
+    public class SystemConfig
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -205,6 +205,24 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
+      <Project>{c9f8feb9-0e98-49cb-848a-a1292a4b14fa}</Project>
+      <Name>TeduShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeduShop.Data\TeduShop.Data.csproj">
+      <Project>{75d82e1f-50bb-4052-bf45-ff64d9c2f46e}</Project>
+      <Name>TeduShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tedushop.Model\Tedushop.Model.csproj">
+      <Project>{7e9b7f93-2b5b-4c09-a74b-af6c9540a0e4}</Project>
+      <Name>Tedushop.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeduShop.Service\TeduShop.Service.csproj">
+      <Project>{ee5a7e06-8a4e-48b2-90ca-ffe7f9ef0fed}</Project>
+      <Name>TeduShop.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
