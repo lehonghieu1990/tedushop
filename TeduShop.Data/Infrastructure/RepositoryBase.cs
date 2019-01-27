@@ -29,6 +29,7 @@ namespace TeduShop.Data.Infrastructure
         {
             DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();
+
         }
         #region Implementation
         public virtual void Add(T entity)
@@ -98,9 +99,19 @@ namespace TeduShop.Data.Infrastructure
                 var query = dataContext.Set<T>().Include(includes.First());
                 foreach (var include in includes.Skip(1))
                     query = query.Include(include);
-                _resetSet = predicate != null
+                _resetSet = predicate != null ? query.Where<T>(predicate).AsQueryable() : query.AsQueryable();
             }
-            return dataContext.Set<T>().Where<T>(predicate).AsQueryable<T>();
+            else
+            {
+                _resetSet = predicate != null ? dataContext.Set<T>().Where<T>(predicate).AsQueryable() : dataContext.Set<T>().AsQueryable();
+            }
+            _resetSet = skipCount == 0 ? _resetSet.Take(size) : _resetSet.Skip(skipCount).Take(size);
+            total = _resetSet.Count();
+            return _resetSet.AsQueryable();
+        }
+        public bool CheckContains(Expression<Func<T, bool>> predicate)
+        {
+            return dataContext.Set<T>().Count<T>(predicate) > 0;
         }
         #endregion
     }
