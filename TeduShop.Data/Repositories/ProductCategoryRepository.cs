@@ -12,13 +12,6 @@ namespace TeduShop.Data.Repositories
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }
-    public abstract class test
-    {
-        public test(string name)
-        {
-
-        }
-    }
     public class ProductCategoryRepository : RepositoryBase<ProductCategory>, IProductCategoryRepository
     {
         public ProductCategoryRepository(IDbFactory dbFactory) : base(dbFactory)
