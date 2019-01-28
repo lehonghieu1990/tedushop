@@ -8,10 +8,10 @@ using TeduShop.Data.Infrastructure;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface IVisitorStatisticRepository
+    public interface IVisitorStatisticRepository : IRepository<VisitorStatistic>
     {
     }
-    public class VisitorStatisticRepository : RepositoryBase<Footer>, IVisitorStatisticRepository
+    public class VisitorStatisticRepository : RepositoryBase<VisitorStatistic>, IVisitorStatisticRepository
     {
         public VisitorStatisticRepository(IDbFactory dbFactory) : base(dbFactory)
         {
