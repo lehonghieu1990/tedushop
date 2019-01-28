@@ -8,7 +8,7 @@ using TeduShop.Data.Infrastructure;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface IFooterRepository
+    public interface IFooterRepository : IRepository<Footer>
     {
     }
     public class FooterRepository : RepositoryBase<Footer>, IFooterRepository
